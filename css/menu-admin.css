@@ -1,0 +1,5 @@
+#adminmenu .menu-icon-post div.wp-menu-image:before {
+	content: "\f0f5"; 
+	font-family: Fontawesome !important;
+}
+
