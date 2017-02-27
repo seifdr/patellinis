@@ -33,27 +33,77 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row">
-				<div id='hpifContainer' class='img-responsive' ></div>
+				<!-- <div id='hpifContainer' class='img-responsive' ></div> -->
 					<?php 
 
 						if( function_exists( 'get_field' ) ){
 
-							$image_feature = get_field('hp_image_feature', $post->ID );
+							$imgC = get_field('image_carousel');
 
-							echo "<div id='hpImageFeature' class='img-responsive' style='background: url(". $image_feature['url'] .") center no-repeat;'>"; ?>
+							if( count( $imgC > 0 ) ){
+							
+							?> 
+								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								  <!-- Indicators -->
+								  <ol class="carousel-indicators">
+								  	<?php 
+								  		if(  count( $imgC > 0 ) ){
+									  		for ($i=0; $i < count( $imgC ) ; $i++) { 
+									  			echo '<li data-target="#carousel-example-generic" data-slide-to="'. $i++ .'"';
+									  			if ( $i == 0 ){ echo ' class="active" '; };
+									  			echo ' ></li>';	
+									  		}
+								  		}
 
-								<div id="hpCallOut">
-									<h1>Patellinis</h1>
-									<p>Sarasota, FL<br />Est. 1985</p>
-									<h3>New York Style Pizza</h3>
-									<h3>Pizza | Pasta | Subs | Salads</h3>
-									<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" type="button" class="btn btn-primary btn-lg">View our menu!</a>
+								  	?>
+								  </ol>
+
+								  <!-- Wrapper for slides -->
+								  <div class="carousel-inner" role="listbox">
+								    <?php 
+
+								    	for ($i=0; $i < count( $imgC ); $i++) { 
+								    			echo '<div class="item ';
+								    				if( $i == 0 ){ echo ' active '; }
+								    			echo '">';
+											      echo '<img src="'. $imgC[$i]['image']['url'] .'" alt="'. $imgC[$i]['image']['alt'] .'">';
+											      echo '<div class="carousel-caption';
+
+											      if( $imgC[$i]['caption_position'] == "1" ){ echo ' left '; } elseif ( $imgC[$i]['caption_position'] == "2" ){ echo ' right '; } else { echo " center "; }
+											      echo '">';
+													echo "<h1>". $imgC[$i]['primary_text'] ."</h1>";
+													echo "<p>". $imgC[$i]['secondary_text'] . "</p>";
+													
+													echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-lg visible-lg'>". $imgC[$i]['button_text'] ."</a>";
+
+													echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-md visible-md'>". $imgC[$i]['button_text'] ."</a>";
+
+													echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-sm visible-sm'>". $imgC[$i]['button_text'] ."</a>";
+
+											      echo '</div>';
+											    echo '</div>';
+										}
+
+								    ?>
+								  </div>
+
+								 <?php if(  count( $imgC > 1 ) ){ ?>
+									  <!-- Controls -->
+									  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									    <span class="sr-only">Previous</span>
+									  </a>
+									  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									    <span class="sr-only">Next</span>
+									  </a>
+								  <?php } ?>
 								</div>
+							<?php
 
-							<?php echo "</div>";
+							} // end if( count( $imgC ) > 0 ) 
 
 						}
-
 
 					?>
 			</div>
@@ -122,14 +172,14 @@ get_header(); ?>
 			<?php
 				// use this instagram access token generator http://instagram.pixelunion.net/
 				// $access_token	= "1503227320.1677ed0.e83ecd9ef0764818aeb744dd90e008e8";
-				$access_token 	= "2103923722.1677ed0.a10dd41c280b4070b314d6fe9eace2e2";
-				$photo_count	= 4;
+				// $access_token 	= "2103923722.1677ed0.a10dd41c280b4070b314d6fe9eace2e2";
+				// $photo_count	= 4;
 				     
-				$json_link		= "https://api.instagram.com/v1/users/self/media/recent/?";
-				$json_link	   .= "access_token={$access_token}&count={$photo_count}";
+				// $json_link		= "https://api.instagram.com/v1/users/self/media/recent/?";
+				// $json_link	   .= "access_token={$access_token}&count={$photo_count}";
 
-				$json =	file_get_contents($json_link);
-				$obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
+				// $json =	file_get_contents($json_link);
+				// $obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
 			?>
 
 			<div id="igTitle" class="row">
