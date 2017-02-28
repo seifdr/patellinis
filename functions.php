@@ -1,10 +1,14 @@
 <?php
+
+// update_option( 'siteurl', 'http://www.duncanseif.com/patellinis' );
+// update_option( 'home', 'http://www.duncanseif.com/patellinis' );
+
 /**
- * patelinis_base functions and definitions
+ * patellinis_base functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package patelinis_base
+ * @package patellinis_base
  */
 
 

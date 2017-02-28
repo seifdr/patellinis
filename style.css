@@ -93,6 +93,12 @@ header#masthead {
 	padding: 1em 0;
 }
 
+a#xsLogo {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
 div.LogoOutter {
 	margin: 1em 0;
 	width: 100%;
@@ -135,6 +141,8 @@ div.upperContactInfo {
 .red {
 	color: #b32317;
 }
+
+/* Image feature carsousel */
 
 div.carousel-inner div.carousel-caption p {
 	font-family: 'Roboto Condensed', sans-serif !important;
@@ -194,10 +202,8 @@ ol.carousel-indicators {
 	}
 }
 
-
 @media screen and (min-width: 922px){
 }
-
 
 @media screen and (min-width: 1000px){
 	div.carousel-inner div.carousel-caption h1 {
@@ -227,6 +233,8 @@ ol.carousel-indicators {
 		font-size: 25px !important;
 	}
 }
+
+/* END - Image feature carsousel */
 
 /*	div#hpImageFeature {
 	  width: 1170px;
