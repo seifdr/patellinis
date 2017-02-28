@@ -8,7 +8,7 @@ $the_bev_type			= get_field( 'beverage_type' );
 	if( ( strtolower( $category->name ) == "beverages" ) && ( $bev_counter == "1" ) ){
 			?>
 			<div class="row">
-				<div class="col-xs-8"></div><div class="col-xs-2 text-center simulatedH4">REG.</div><div class="col-xs-2 text-center simulatedH4">LG.</div>
+				<div class="col-xs-6 col-sm-8"></div><div class="col-xs-3 col-sm-2 text-center simulatedH4">REG.</div><div class="col-xs-3 col-xs-2 text-center simulatedH4">LG.</div>
 			</div>
 			<?php
 		}
@@ -20,10 +20,10 @@ $the_bev_type			= get_field( 'beverage_type' );
 			<?php echo get_field('description'); ?>
 		</div>
 		<?php if( strtolower( $the_bev_type ) == "soda" ) { ?>
-			<div class="col-xs-2"></div><div class="col-xs-2 text-center simulatedH4"><?php if( !empty( $the_regular_price_soda ) ){ echo "$" . $the_regular_price_soda; } ?></div>
-			<div class="col-xs-2 text-center simulatedH4"><?php if( !empty( $the_large_price_soda ) ){ echo "$" . $the_large_price_soda; } ?></div>
+			<div class="xs-hidden col-sm-2"></div><div class="col-xs-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_regular_price_soda ) ){ echo "$" . $the_regular_price_soda; } ?></div>
+			<div class="col-xs-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_large_price_soda ) ){ echo "$" . $the_large_price_soda; } ?></div>
 		<?php } else { ?>
-			<div class="col-xs-4"></div><div class="col-xs-2 text-center simulatedH4"><?php if( !empty( $the_price ) ){ echo "$" . $the_price; }  ?></div>
+			<div class="col-xs-3 col-sm-4" ></div><div class="col-xs-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_price ) ){ echo "$" . $the_price; }  ?></div>
 		<?php } ?>
 	</div>
 	<div class="row">
@@ -37,11 +37,11 @@ $the_bev_type			= get_field( 'beverage_type' );
 				the_row();
 
 				echo "<div class='row' >";
-					echo "<div class='col-xs-10 col-sm-6' >";
+					echo "<div class='col-xs-9 col-sm-6' >";
 			       		the_sub_field('variation_description');
 			        echo "</div>";
-			        echo "<div class='hidden-xs-block col-sm-4' ></div>";
-			        echo "<div class='col-xs-2 text-center simulatedH4 noMargin'>";
+			        echo "<div class='hidden-xs col-sm-4' ></div>";
+			        echo "<div class='col-xs-3 col-sm-2 text-center simulatedH4 noMargin'>";
 			        	$variation_price = trim( get_sub_field('variation_price') );
 
 			        	if( !empty( $variation_price ) ){ echo "$" . $variation_price; }

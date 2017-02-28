@@ -1,13 +1,13 @@
 /*
-Theme Name: Patelinis
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme Name: Patellinis
+Theme URI: http://www.patellinis.come/
+Author: Duncan Seif
+Author URI: http://www.duncanseif.com
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: patelinis_base
+Text Domain: patellinis_base
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -71,6 +71,32 @@ nav.navbar {
 	margin-bottom: 0;
 }
 
+.cellLinks {
+	text-align: center !important;
+}
+
+.cellLinks a {
+	text-align: center !important;
+	color: #fff !important;
+}
+
+.cellLinks a:before {
+	font-family: FontAwesome;
+	content: "\f095" ;
+	font-size: 1em;
+	color: #fff;
+	padding-right: 5px;
+}
+
+.cellLinks a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+
+
+
+
+
 ul.nav-justified > li > a  {
 	font-family: 'Roboto Condensed', sans-serif !important;
 	text-transform: uppercase !important;
@@ -94,9 +120,9 @@ header#masthead {
 }
 
 a#xsLogo {
-	display: block;
-	margin: 0;
-	padding: 0;
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 div.LogoOutter {
@@ -132,6 +158,8 @@ p.site-description {
 
 .breadcrumb {
 	background-color: none !important;
+	margin-bottom: 0 !important;
+	padding: 0 !important;
 }
 
 div.upperContactInfo {
@@ -158,10 +186,16 @@ ol.carousel-indicators {
 
 
 @media screen and (max-width: 475px){
+
 	div.carousel-caption {
-		/*bottom: 2%;*/
-		top: 1%;
+		top: 10%;
+		bottom: 10%;
 	}
+
+	div.carousel-caption p {
+		display: none;
+	}
+
 }
 
 @media screen and (min-width: 650px){
@@ -380,12 +414,6 @@ ol.carousel-indicators {
 		border-bottom: 1px solid #b32317;
 	}
 
-	.browseMenu > div {
-		border-bottom: 1px solid #ccc;
-		margin-bottom: 1em;
-		padding-bottom: .5em;
-	}
-
 	#backToTop {
 		display: none;
 		position: absolute;
@@ -400,12 +428,15 @@ ol.carousel-indicators {
 		vertical-align: middle;
 	}
 
-	.breadcrumb {
-		background-color: transparent !important;
-		padding-left: 0;
+	.browseMenu > div {
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 2em;
 	}
 
-	.browseMenu ul { list-style-type: none; }
+	div.browseMenu { margin-bottom: 10px; padding-bottom: 10px; }
+
+	.browseMenu ul { list-style-type: none; margin-bottom: 0 !important; }
+	
 	.browseMenu li { margin: .25em; }
 	.browseMenu li a { padding: .5em; display: block; width: 100%; background-color: #b32317; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; }
 

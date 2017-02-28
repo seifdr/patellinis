@@ -6,17 +6,11 @@ $the_price = get_field('price');
 ?>
 <div class='menuItem'>
 	<div class="row">
-		<div class="col-xs-10 col-sm-6 first">
-			<?php if( !is_single() ){ ?>
-				<a class="menuLinks" href="<?php the_permalink(); ?>">
-					<h4 class="under"><?php the_title(); ?></h4>
-				</a>
-			<?php } else { ?>
-				<h1 class="under"><?php the_title(); ?></h1>
-			<?php } ?>
+		<div class="col-xs-9 col-sm-6 first">
+			<h4 class="under"><?php the_title(); ?></h4>
 			<?php echo get_field('description'); ?>
 		</div>
-		<div class="hidden-xs col-sm-4 simulatedH4 under">&nbsp;</div><div class="col-xs-2 col-sm-2 text-center simulatedH4 under"><?php if( !empty( $the_price ) ){ echo "$" . $the_price; }  ?></div>
+		<div class="hidden-xs col-sm-4 simulatedH4 under">&nbsp;</div><div class="col-xs-3 col-sm-2 text-center simulatedH4 under"><?php if( !empty( $the_price ) ){ echo "$" . $the_price; }  ?></div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-6"></div>
@@ -29,11 +23,11 @@ $the_price = get_field('price');
 				the_row();
 
 				echo "<div class='row' >";
-					echo "<div class='col-xs-10 col-sm-6' >";
+					echo "<div class='col-xs-9 col-sm-6' >";
 			       		the_sub_field('variation_description');
 			        echo "</div>";
-			        echo "<div class='hidden-xs-block col-sm-4' ></div>";
-			        echo "<div class='col-xs-2 text-center simulatedH4 noMargin'>";
+			        echo "<div class='hidden-xs col-sm-4' ></div>";
+			        echo "<div class='col-xs-3 col-sm-2 text-center simulatedH4 noMargin'>";
 			        	$variation_price = trim( get_sub_field('variation_price') );
 
 			        	if( !empty( $variation_price ) ){ echo "$" . $variation_price; }

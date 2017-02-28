@@ -172,14 +172,14 @@ get_header(); ?>
 			<?php
 				// use this instagram access token generator http://instagram.pixelunion.net/
 				// $access_token	= "1503227320.1677ed0.e83ecd9ef0764818aeb744dd90e008e8";
-				// $access_token 	= "2103923722.1677ed0.a10dd41c280b4070b314d6fe9eace2e2";
-				// $photo_count	= 4;
+				$access_token 	= "2103923722.1677ed0.a10dd41c280b4070b314d6fe9eace2e2";
+				$photo_count	= 4;
 				     
-				// $json_link		= "https://api.instagram.com/v1/users/self/media/recent/?";
-				// $json_link	   .= "access_token={$access_token}&count={$photo_count}";
+				$json_link		= "https://api.instagram.com/v1/users/self/media/recent/?";
+				$json_link	   .= "access_token={$access_token}&count={$photo_count}";
 
-				// $json =	file_get_contents($json_link);
-				// $obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
+				$json =	file_get_contents($json_link);
+				$obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
 			?>
 
 			<div id="igTitle" class="row">
@@ -192,7 +192,7 @@ get_header(); ?>
 
 					// look( $obj['data'][$i] );
 
-					echo '<div class="col-xs-12 col-sm-3">';
+					echo '<div class="col-xs-6 col-sm-3">';
 						echo '<a href="'. $obj['data'][$i]['link'] .'" class="thumbnail col-xs-12">';
 					    	echo '<img src="'. $obj['data'][$i]['images']['low_resolution']['url'] .'" alt="...">';
 					    echo '</a>';
@@ -200,8 +200,14 @@ get_header(); ?>
 					   	echo '<div class="col-xs-6"><p class="text-right">'. $obj['data'][$i]['comments']['count'] .'&nbsp;Comments</p></div></div>';
 						echo '<div class="row"><p class="col-xs-12 text-center">'. $obj['data'][$i]['caption']['text'] .'</p></div>';
 					echo '</div>';	
+					
+					if ( ( $i+1 ) % 2 == 0 ) {
+					   ?>
+					   		<div class="clearfix visible-xs"></div>
+					   <?php
+					}
+					
 				}
-
 
 			?>		
 <!-- 				<div class="col-xs-12 col-sm-3">

@@ -15,26 +15,27 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<div id="backToTop">
+		<!-- <div id="backToTop">
 			<i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
-		</div>
+		</div> -->
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 			<?php
 			//if ( have_posts() ) :
 
 				if ( is_home() && ! is_front_page() ) { ?>
-					<header class="row" >
-						<div class="col-xs-12">
-							<br />
-							<?php custom_breadcrumbs(); ?>
-							<p>For a pdf copy of our menu, please <a href="#">click here</a>.</p>
-							<br />
-							<p><strong>Browse our menu by category</strong></p>
+					<header>
+						<div class="row">
+							<div class="col-xs-12">
+								<?php custom_breadcrumbs(); ?>
+								<br />
+								<p>For a pdf copy of our menu, please <a href="#">click here</a>.</p>
+								<br />
+								<p><strong>Browse our menu by category</strong></p>
+							</div>
 						</div>
 						<div class="row browseMenu">
-							<div class="col-xs-12 ">
-									<ul class="col-xs-12 col-sm-6">
+									<ul class="col-xs-12 col-sm-6 ">
 									<?php 
 
 										$categories = get_categories( array(
@@ -55,18 +56,10 @@ get_header(); ?>
 											if( $catCount == $categoryCnt ){
 												echo '</ul><ul class="col-xs-12 col-sm-6">';
 											}
-
-
-
 										}
-
 									?>
 									</ul>
-							</div>
 						</div>
-						<!-- <h1 class="page-title screen-reader-text"> -->
-							<?php // single_post_title(); ?>	
-						<!-- </h1> -->
 					</header>
 
 				<?php
@@ -82,7 +75,7 @@ get_header(); ?>
 						<div class="col-xs-12">
 						<?php 
 
-							echo "<a class='catLinks' href='". get_category_link( $category->cat_ID ) . "'><h2 id='". $category->name ."' >". $category->name ."</h2></a>";
+							echo "<h2 id='". $category->name ."' >". $category->name ."</h2>";
 
 							echo "<p>". $category->description . "</p>";
 						?>
@@ -166,27 +159,9 @@ get_header(); ?>
 
 			} // end foreach categories
 
-			/* Start the Loop */
-			// while ( have_posts() ) : the_post();
+		 ?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				// get_template_part( 'template-parts/content', get_post_format() );
-
-			// endwhile;
-
-			// the_posts_navigation();
-
-		// else :
-
-			// get_template_part( 'template-parts/content', 'none' );
-
-		//endif; ?>
-
-					<br />
+					
 				</div> <!-- closing divs for the main row and col to pad larger screens -->
 			</div>
 
@@ -194,22 +169,22 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		 
-		console.log('hey');
-
-		$(document).scroll( function () {
-		    var y = $(this).scrollTop();
-		    if (y > 800) {
-		    	console.log('hello');
-		        $('div#backToTop').fadeIn();
-		    } else {
-		    	console.log('goodbye');
-		        $('div#backToTop').fadeOut();
-		    }
-
-		});
-	});
+	// jQuery(document).ready(function($) {
+// 		 
+		// console.log('hey');
+// 
+		// $(document).scroll( function () {
+		    // var y = $(this).scrollTop();
+		    // if (y > 800) {
+		    	// console.log('hello');
+		        // $('div#backToTop').fadeIn();
+		    // } else {
+		    	// console.log('goodbye');
+		        // $('div#backToTop').fadeOut();
+		    // }
+// 
+		// });
+	// });
 </script>
 
 

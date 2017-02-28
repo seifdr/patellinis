@@ -49,7 +49,7 @@
 
 				jQuery(document).ready(function($) {
 
-					$('#sendMsg').on('click', function(){
+					$('.contactUsLink').on('click', function(){
 						alert('Message Sent');
 						$('div#exampleModal').modal('hide');
 					});

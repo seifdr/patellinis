@@ -13,7 +13,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -34,10 +35,13 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
+					      
 					       <a class="navbar-brand visible-xs" href="<?php echo get_site_url(); ?>" id="xsLogo" alt="Visit our homepage!"><?php $description = get_bloginfo( 'description', 'display' ); ?>
 								<img id="PatelinnisLogoSm" class="img-responsive" style="height: 50px; margin-top: 0; padding-top: 0;" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patellinis-White-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
 							</a>
+							<p class="navbar-text navbar-left cellLinks"><a href="tel:9419576433" title="Order now" class="navbar-link">941-957-6433</a></p>
 					    </div>
+					    
 
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,12 +65,11 @@
 					</nav>
 				</div>
 
-				<div class="row text-center upperContactInfo hidden-xs">
-					<div class="col-xs-4 col-xs-offset-1">
+				<div class="row upperContactInfo hidden-xs">
+					<div class="col-xs-6 text-center">
 						<p>1429 Main Street Sarasota, Florida 34236</p>
 					</div>
-					<div class="col-xs-2">&nbsp;</div>
-					<div class="col-xs-4">
+					<div class="col-xs-6 text-center">
 						<p>Order Now - Call 941-957-6433</p>
 					</div>
 				</div>
