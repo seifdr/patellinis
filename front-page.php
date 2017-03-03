@@ -178,50 +178,43 @@ get_header(); ?>
 				$json_link		= "https://api.instagram.com/v1/users/self/media/recent/?";
 				$json_link	   .= "access_token={$access_token}&count={$photo_count}";
 
-				$json =	file_get_contents($json_link);
-				$obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
-			?>
+				$json = @file_get_contents( $json_link, true );
 
-			<div id="igTitle" class="row">
-				<div class="col-xs-12"><h2 class="text-center">Pizza Social</h2></div>
-			</div>
-			<div class="row igContainer">
-			<?php 
+				if(  $json !== false ){
 
-				for ($i=0; $i < 4; $i++) { 
+					$obj =	json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
+				?>
 
-					// look( $obj['data'][$i] );
+				<div id="igTitle" class="row">
+					<div class="col-xs-12"><h2 class="text-center">Pizza Social</h2></div>
+				</div>
+				<div class="row igContainer">
+				<?php 
 
-					echo '<div class="col-xs-6 col-sm-3">';
-						echo '<a href="'. $obj['data'][$i]['link'] .'" class="thumbnail col-xs-12">';
-					    	echo '<img src="'. $obj['data'][$i]['images']['low_resolution']['url'] .'" alt="...">';
-					    echo '</a>';
-					    echo '<div class="row"><div class="col-xs-6 "<p class="text-left"><i class="fa fa-heart red" aria-hidden="true"></i>&nbsp;'. $obj['data'][$i]['likes']['count'] .'&nbsp;Likes</p></div>';
-					   	echo '<div class="col-xs-6"><p class="text-right">'. $obj['data'][$i]['comments']['count'] .'&nbsp;Comments</p></div></div>';
-						echo '<div class="row"><p class="col-xs-12 text-center">'. $obj['data'][$i]['caption']['text'] .'</p></div>';
-					echo '</div>';	
-					
-					if ( ( $i+1 ) % 2 == 0 ) {
-					   ?>
-					   		<div class="clearfix visible-xs"></div>
-					   <?php
+					for ($i=0; $i < 4; $i++) { 
+
+						// look( $obj['data'][$i] );
+
+						echo '<div class="col-xs-6 col-sm-3">';
+							echo '<a href="'. $obj['data'][$i]['link'] .'" class="thumbnail col-xs-12">';
+						    	echo '<img src="'. $obj['data'][$i]['images']['low_resolution']['url'] .'" alt="...">';
+						    echo '</a>';
+						    echo '<div class="row"><div class="col-xs-6 "<p class="text-left"><i class="fa fa-heart red" aria-hidden="true"></i>&nbsp;'. $obj['data'][$i]['likes']['count'] .'&nbsp;Likes</p></div>';
+						   	echo '<div class="col-xs-6"><p class="text-right">'. $obj['data'][$i]['comments']['count'] .'&nbsp;Comments</p></div></div>';
+							echo '<div class="row"><p class="col-xs-12 text-center">'. $obj['data'][$i]['caption']['text'] .'</p></div>';
+						echo '</div>';	
+						
+						if ( ( $i+1 ) % 2 == 0 ) {
+						   ?>
+						   		<div class="clearfix visible-xs"></div>
+						   <?php
+						}
+						
 					}
-					
-				}
+				} // end empty obj	
 
 			?>		
-<!-- 				<div class="col-xs-12 col-sm-3">
-					Instagram content here
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					Instagram content here
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					Instagram content here
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					Instagram content here
-				</div> -->
+
 			</div>
 
 			<div class="row">
