@@ -1,0 +1,646 @@
+@import '../src/bootstrap/bootstrap';
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+$bodyTextSize: 18px;
+
+
+//darker, background 
+$primary-red: #861a11;
+
+//light red, link
+$secondary-red: #b32317;
+
+//colors 
+$white: #fff;
+$grey: #ccc;
+$black: #000;
+
+@import url('https://fonts.googleapis.com/css?family=Overlock|Roboto+Condensed: 400, 700');
+
+.red {
+	color: $secondary-red;
+}
+
+div#content {
+    font-size: $bodyTextSize !important;
+        p {
+            font-size: $bodyTextSize !important;
+        }
+}
+
+body {
+	font-family: 'Overlock', serif !important;
+    background-color: $secondary-red !important;
+    background-image: url('../img/offsetArrows40o.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+div.container {
+	background-color: $white;
+	box-shadow: 0 10px 5px $black;
+}
+
+// START OF NEW WORK //-
+
+
+nav.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
+    // height: 100px;
+
+    @media screen and (max-width: $screen-md-min ) and (min-width: $screen-sm) {
+        height: 100%;
+    }
+
+}
+
+.cellLinks {
+	text-align: center !important;
+}
+
+.cellLinks a {
+	text-align: center !important;
+	color: $white !important;
+}
+
+.cellLinks a:before {
+	font-family: FontAwesome;
+	content: "\f095" ;
+	font-size: 1em;
+	color: $white;
+	padding-right: 5px;
+}
+
+.cellLinks a:hover {
+	color: $grey;
+	text-decoration: none;
+}
+
+ul.nav-justified {
+    li {
+        a {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            text-transform: uppercase !important;
+            color: $white !important;
+            height: 50px;
+            font-size: 1.5em;
+            padding: 10px;
+
+            &:hover {
+                color: $secondary-red;
+                // color: blue;
+            }
+
+        }
+    }
+
+}
+
+ul.nav-justified > li > a {
+    @media screen and (max-width: $screen-md-min ) and (min-width: $screen-sm) {
+        height: 75px; 
+    }
+}
+
+ul.nav-justified > li > a:hover  {
+	background-color: $secondary-red;
+    // background-color: blue;
+}
+
+/* overirdes the grey default from BS on open, and focus */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav > li > a:focus {
+	background-color: $primary-red;
+}
+
+header#masthead {
+	padding: 1em 0;
+}
+
+a#xsLogo {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.LogoOutter {
+	margin: 1em 0;
+	width: 100%;
+}	
+
+div.LogoInner {
+	margin: 0 auto;
+	max-width: 550px;
+}
+
+
+div.upperContactInfo p { text-align: center !important; }
+
+p.site-description {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 400;
+}
+
+.breadcrumb {
+	background-color: none !important;
+	margin-bottom: 0 !important;
+	padding: 0 !important;
+}
+
+div.upperContactInfo {
+	margin-top: 1em;
+}
+
+/* Image feature carsousel */
+
+div.carousel-inner {
+
+    div.carousel-caption {
+
+        h1 {
+            margin-top: 0;
+            border: 1px solid red;
+        }
+
+        p {
+            font-family: 'Roboto Condensed', sans-serif !important;
+        }
+    
+        @media screen and (max-width: $screen-xs){
+            & { 
+                top: 10%;
+		        bottom: 10%;
+            }
+
+            p {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 650px){
+            & {
+                top: 10%;
+                bottom: 10%;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: $screen-sm){
+        div.left {
+            left: 0;
+            right: 45%;
+        }
+
+        div.right {
+            right: 0;
+            left: 45%;
+        }
+
+        div.carousel-caption a {
+            margin: 0 auto;
+            max-width: 200px;
+        }
+
+        div.carousel-caption {
+            h1 {
+                margin-top: 0;
+                padding-top: 0;
+            }
+
+            top: 5%;
+        }
+
+        ol.carousel-indicators {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1000px){
+
+        div.carousel-inner {
+
+            div.carousel-caption {
+                h1 {
+                    font-size: 45px !important;	
+                }
+
+                p {
+                    font-size: 20px !important;
+                }
+
+                a {
+                    margin-top: 15px;
+                }
+
+            }
+        }
+
+        & {
+            //div.carousel-inner
+            top: 15%;
+            bottom: 15%;
+        }
+    }
+
+
+    @media screen and (min-width: $screen-lg ){
+        div.carousel-inner {
+             div.carousel-caption {
+                h1 {
+		            font-size: 55px !important;
+                }
+                p {
+                    font-size: 25px !important;
+                }
+             }
+        }
+	}
+
+} // div.carousel-inner
+
+
+ol.carousel-indicators {
+	display: none;
+}
+
+
+/* END - Image feature carsousel */
+
+div#igTitle {
+    margin-top: 2em;
+}
+
+div.igContainer div {
+}
+
+div.bottomFeature {
+    margin: 2em 0;
+
+    h2 {
+        @media screen and ( max-width: $screen-md ){
+            text-align: center;
+        }
+    }
+
+    p {
+         text-align: left;
+    }
+
+}
+
+/*  INDEX PAGE CONTACT INFO */
+
+.simulatedH4 {
+    font-size: 18px;
+    font-weight: 500px;
+    margin: 10px 0px;
+    line-height: 19.8px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.noMargin {
+    margin-top: 0 !important;
+}
+
+
+body.blog, body.archive, body.single {
+    h1, h2 {
+        color: $secondary-red;
+		text-transform: uppercase;
+		text-align: center;
+    }
+
+    p {
+        text-align: left;
+    }
+    
+}
+
+body.blog div.menuItem, body.archive div.menuItem {
+    margin-bottom: 1.5em;
+}
+
+div#primary {
+    margin: 1em 0 3em 0;
+}
+
+body.home {
+    div#primary {
+        margin: 0 !important;
+    }	
+}
+
+//continue
+
+a.catLinks:hover, a.catLinks:active, a.catLinks:focus, a.menuLinks:hover, a.menuLinks:active, a.catLinks:focus {
+    text-decoration: none;
+    cursor: default !important;
+}
+
+a.menuLinks { 
+    color: #000;
+}
+
+div.menuItem {
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+    padding-bottom: 5px;
+
+    &:hover {
+        border-top: 1px solid $secondary-red;
+        border-bottom: 1px solid $secondary-red;  
+    }
+}
+
+#backToTop {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 5em;
+    height: 5em;
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.browseMenu {
+    
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
+
+    div {
+        border-bottom: 1px solid $grey;
+        padding-bottom: 2em;
+    }
+
+    ul {
+        list-style-type: none; margin-bottom: 0 !important;
+
+        li {
+            margin: .25em;
+
+            a {
+                padding: .5em; display: block; width: 100%; background-color: $secondary-red; color: $white; text-align: center; text-transform: uppercase; border-radius: 6px;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: $primary-red;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+/* SINGLE CSS */
+body.single {
+    h1 {
+        color: $black;
+        text-align: left;
+        font-size: $bodyTextSize;
+        font-weight: 500px;
+        margin: 10px 0px;
+        line-height: 19.8px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+}
+
+body.single {
+    .menuItem{ 
+        border-top: 1px solid $secondary-red;
+        border-bottom: 1px solid $secondary-red;
+    }
+}
+
+/* FOOTER CSS */
+
+div.site-info {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+div.footer-widgets {
+    font-size: $bodyTextSize;
+    color: $white;
+    background-color: $black !important;
+}
+
+div.footer-widgets h3, div.footer-widgets p, div.footer-widgets address {
+    text-align: center;
+}
+
+div.footer-widgets .widget {
+    background-color: $black;
+}
+
+footer.site-footer {
+    background-color: $black;
+    color: $white;
+}
+
+div.site-info {
+    text-align: center !important;
+}
+
+div.site-info p {
+    font-size: $bodyTextSize;
+    text-align: center !important;
+}
+
+div.site-info {
+    text-align: center !important;
+}
+
+a#emailUs {
+    color: $white;
+}
+
+a#emailUs:before {
+    font-family: FontAwesome;
+    content: "\f003" ;
+    font-size: 1em;
+    color: $white;
+    padding-right: 5px;
+}
+
+/* PAGE CSS */
+div.page {
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+div.map {
+    margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Homepage 
+
+div#hpCallOut {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    /*border: 1px solid #fff;*/
+
+   & > h1 {
+        font-size: 5em;
+        text-transform: uppercase;
+    }
+
+    h3:nth-of-type(1) {
+        margin: 25px 0;
+    }
+
+    & > p {
+        font-size: 1.5em;
+    }
+
+    & > a.btn {
+        margin-top: 1em;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: $screen-md) { 
+            width: 100%;
+    }
+}
+
+div.callouts {
+    margin-top: 2em;
+
+    h3, div {
+        text-align: center;
+    }
+}
+
+div.callouts div.textWrap {
+
+    @media (min-width: $screen-sm) { 
+            min-height: 200px;
+    }
+
+    @media (min-width: $screen-md) { 
+            min-height: 150px;
+    }
+
+    @media (min-width: $screen-lg) { 
+            min-height: 120px;
+    }
+}
+
+
+// Pages --> side picture
+
+.page-img-feature {
+    float: right;
+    max-width: 500px;
+    margin: 0 0 1em 1em;
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (max-width: $screen-md) {
+        .page-img-feature {
+            max-width: 100%;
+        }
+    }
+
+}
+
+
+
+// Locations and Hour Custom CSS
+div#locationAndHours {
+    table {
+
+        & {
+            width: 100%;
+        }
+        margin: 0 auto;
+
+        td {
+            @media screen and (max-width: $screen-xs) {
+                float: left;
+                width: 100%;
+
+                &:nth-child(2){
+                    font-size: .8em;
+                }
+                
+            }
+        }
+
+        tr {
+            @media screen and (max-width: $screen-xs) {
+                float: left;
+                width: 100%;
+                padding-bottom: .5em;
+            } 
+        }
+    }
+}
+
+div.maps iframe {
+    //pointer-events: none;
+}
