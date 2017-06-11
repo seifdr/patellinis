@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
-    "fs-extra": "^2.1.2",
+    "fs-extra": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^3.2.0",
@@ -19,7 +19,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.1.2",
+    "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.4",
     "json-file": "^0.1.0",
     "node-fs": "^0.1.7",
