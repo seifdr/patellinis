@@ -210,6 +210,7 @@ function patelinis_base_scripts() {
 	wp_enqueue_style( 'patelinis_base-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'patellinis_bootstrap-style', get_template_directory_uri() . "/patellinis-bootstrap/css/bootstrap.min.css" );
+	wp_enqueue_style( 'patellinis_main-style', get_template_directory_uri() . "/css/main.css" );
 
 	wp_enqueue_style( 'patellinis_font_awesome-style', get_template_directory_uri() . "/font-awesome-4.7.0/css/font-awesome.min.css" );
 

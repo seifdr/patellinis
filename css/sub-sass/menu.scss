@@ -1,0 +1,55 @@
+@import 'variables';
+
+a.catLinks:hover, a.catLinks:active, a.catLinks:focus, a.menuLinks:hover, a.menuLinks:active, a.catLinks:focus {
+    text-decoration: none;
+    cursor: default !important;
+}
+
+a.menuLinks { 
+    color: #000;
+}
+
+.menuItem {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+.menuItem:hover {
+    /*border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;*/
+
+    border-top: 1px solid $primaryRed;
+    border-bottom: 1px solid $primaryRed;
+}
+
+#backToTop {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 5em;
+    height: 5em;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.browseMenu > div {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2em;
+}
+
+div.browseMenu { margin-bottom: 10px; padding-bottom: 10px; }
+
+.browseMenu ul { list-style-type: none; margin-bottom: 0 !important; }
+
+.browseMenu li { margin: .25em; }
+.browseMenu li a { padding: .5em; display: block; width: 100%; background-color: $primaryRed; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; }
+
+.browseMenu li a:hover {
+    text-decoration: none;
+    background-color: #861a11;
+}

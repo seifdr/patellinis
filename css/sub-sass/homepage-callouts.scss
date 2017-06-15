@@ -1,0 +1,53 @@
+@import 'variables';
+
+div#hpCallOut {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    /*border: 1px solid #fff;*/
+}
+
+div#hpCallOut > h1 {
+    font-size: 5em;
+    text-transform: uppercase;
+}
+
+div#hpCallOut h3:nth-of-type(1) {
+    margin: 25px 0;
+}
+
+div#hpCallOut > p {
+    font-size: 1.5em;
+}
+
+div#hpCallOut > a.btn {
+    margin-top: 1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) { 
+    div#hpCallOut{
+        width: 100%;
+    }	
+}
+
+div.callouts {
+    margin-top: 2em;
+}
+
+div.callouts h3 {
+    text-align: center;
+}
+
+div.callouts div {
+    text-align: center;
+}
+
+div.callouts div.textWrap {
+    min-height: 80px;
+}

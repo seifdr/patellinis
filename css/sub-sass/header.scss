@@ -1,0 +1,87 @@
+@import 'variables';
+
+//NAVIGATION
+nav.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.cellLinks {
+	text-align: center !important;
+
+	a {
+		text-align: center !important;
+		color: #fff !important;
+	}
+
+	a:before {
+		font-family: FontAwesome;
+		content: "\f095" ;
+		font-size: 1em;
+		color: #fff;
+		padding-right: 5px;
+	}
+
+	a:hover {
+		color: #ccc;
+		text-decoration: none;
+	}
+}
+
+
+ul.nav-justified {
+	li {
+		 a  {
+			font-family: $primaryFontFamily !important;
+			text-transform: uppercase !important;
+			color: #fff !important;
+			height: 50px;
+			font-size: 1.5em;
+			padding: 10px;
+
+			&:hover {
+				background-color: $primaryRed;
+			}
+
+		 }
+	}
+}
+
+
+/* overirdes the grey default from BS on open, and focus */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav > li > a:focus {
+	background-color: $secondaryRed;
+}
+
+// OTHER HEADER ITEMS
+header#masthead {
+	padding: 1em 0;
+}
+
+a#xsLogo {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.LogoOutter {
+	margin: 1em 0;
+	width: 100%;
+}	
+
+div.LogoInner {
+	margin: 0 auto;
+	max-width: 550px;
+}
+
+div.upperContactInfo {
+	margin-top: 1em;
+}
+
+div.upperContactInfo p { text-align: center !important; }
+
+p.site-description {
+	font-family: $primaryFontFamily;
+	font-weight: 400;
+}
+

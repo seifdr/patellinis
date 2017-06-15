@@ -1,0 +1,17 @@
+@import 'variables';
+
+/* SINGLE CSS */
+body.single h1{
+    color: #000;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500px;
+    margin: 10px 0px;
+    line-height: 19.8px;
+    font-family: $primaryFontFamily;
+}
+
+body.single .menuItem {
+    border-top: 1px solid #b32317;
+    border-bottom: 1px solid #b32317;
+}

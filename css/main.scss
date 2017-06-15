@@ -1,2 +1,46 @@
-@import "src/bootstrap/bootstrap";
-@import "custom/bootstrap-override.scss";
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/* 
+
+	Red: b32317;
+	dark red: 861a11;
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Overlock|Roboto+Condensed: 400, 700');
+
+@import 'sub-sass/header';
+@import 'sub-sass/body'; 
+@import 'sub-sass/homepage-carousel';
+@import 'sub-sass/homepage-callouts';
+@import 'sub-sass/homepage-instagram';
+@import 'sub-sass/footer';
+@import 'sub-sass/page';
+@import 'sub-sass/menu';
+
+
+
+
+
+

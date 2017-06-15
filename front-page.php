@@ -40,8 +40,6 @@ get_header(); ?>
 
 							$imgC = get_field('image_carousel');
 
-							look( $imgC );
-
 							if( count( $imgC > 0 ) ){
 							
 							?> 
