@@ -293,6 +293,17 @@ div.breadcrumb {
 div.map {
   margin-top: 1em; }
 
+div#locationAndHours table {
+  width: 100%; }
+
+div#locationAndHours td:nth-child(odd) {
+  text-align: right;
+  padding-right: 5px; }
+
+div#locationAndHours td:nth-child(even) {
+  padding-left: 5px;
+  text-align: left; }
+
 a.catLinks:hover, a.catLinks:active, a.catLinks:focus, a.menuLinks:hover, a.menuLinks:active, a.catLinks:focus {
   text-decoration: none;
   cursor: default !important; }

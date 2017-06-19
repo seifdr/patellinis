@@ -12,3 +12,19 @@ div.breadcrumb {
 div.map {
     margin-top: 1em;
 }
+
+div#locationAndHours {
+    table {
+        width: 100%;
+    }
+
+    td:nth-child(odd) {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    td:nth-child(even) {
+        padding-left: 5px;
+        text-align: left; 
+    }
+}

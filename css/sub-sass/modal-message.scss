@@ -1,0 +1,13 @@
+@import 'variables';
+
+textarea#message-text { 
+    height: 250px; 
+
+    &:focus, &:active {
+        // border: none !important;
+        // border-color: transparent !important;
+        border-color: $primaryRed;
+        box-shadow: none !important;
+        // outline: 0 none !important; 
+    }
+}

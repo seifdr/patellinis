@@ -41,19 +41,6 @@
 			<div class="row">
 				<?php displayImg( get_post_thumbnail_id(), "large", 'img-responsive page-img-feature visible-xs visible-sm col-xs-12', TRUE ); ?>
 			</div>
-			<?php if( is_page('Location and Hours') ) { ?>
-				<div class="row">
-					<div class="col-xs-12 map">
-						<iframe
-						  width="100%"
-						  height="450"
-						  frameborder="0" style="border:0"
-						  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCaA53wpLjdA7TrHB4ZSiI_f1X3XkDOPzA
-						    &q=Patellini's Pizza 1429 Main St, Sarasota, FL 34236" allowfullscreen>
-						</iframe>
-					</div>
-				</div>
-			<?php } ?>
 		</div><!-- .entry-content -->
 
 		<?php if ( get_edit_post_link() ){ ?>
