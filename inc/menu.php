@@ -324,10 +324,8 @@ class PatelinnisMenu
 	}
 
     function all_menu_items_on_blog( $query ){
-
     	// make sure all posts/menuitems show on menu
-
-  		if( $query->is_main_query() && isset( $query->query['pagename'] ) && ( $query->query['pagename'] == 'menu' ) ){
+  		if( $query->is_main_query() && ( is_home() || is_archive() ) ){
   			$query->set('posts_per_page', -1);
   			$query->set('meta-key', 'menuItemOrder');
   			$query->set('orderby', 'meta_value');
