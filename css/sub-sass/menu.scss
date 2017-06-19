@@ -55,10 +55,18 @@ div.browseMenu {
         margin: .25em;
 
         a {
-            padding: .5em; display: block; width: 100%; background-color: $primaryRed; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px;
-            &{
-                 text-decoration: none;
-                background-color: $secondaryRed;
+            padding: .5em; 
+            display: block; 
+            width: 100%;  
+            background-color: $primaryRed; 
+            color: #fff; 
+            text-align: center; 
+            text-transform: uppercase; 
+            border-radius: 6px;
+            
+            &:hover {
+                text-decoration: none;
+                background-color: $secondaryRed; 
             }
         }
     }
