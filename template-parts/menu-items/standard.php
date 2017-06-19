@@ -23,9 +23,9 @@ $the_price = get_field('price');
 				the_row();
 
 				echo "<div class='row' >";
-					echo "<div class='col-xs-9 col-sm-6' >";
+					echo "<div class='col-xs-9 col-sm-6' ><span>";
 			       		the_sub_field('variation_description');
-			        echo "</div>";
+			        echo "</span></div>";
 			        echo "<div class='hidden-xs col-sm-4' ></div>";
 			        echo "<div class='col-xs-3 col-sm-2 text-center simulatedH4 noMargin'>";
 			        	$variation_price = trim( get_sub_field('variation_price') );

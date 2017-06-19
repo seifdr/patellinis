@@ -90,7 +90,7 @@ body {
   font-family: 'Overlock', serif !important;
   background-color: #b32317 !important;
   background-image: url("../img/offsetArrows40o.png"); }
-  body p, body td {
+  body p, body td, body span {
     font-size: 1.25em; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -282,9 +282,8 @@ footer.site-footer {
 
 div.site-info {
   text-align: center !important; }
-
-div.site-info {
-  text-align: center !important; }
+  div.site-info p {
+    text-align: center !important; }
 
 a#emailUs {
   color: #fff; }
