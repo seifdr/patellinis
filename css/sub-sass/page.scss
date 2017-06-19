@@ -5,8 +5,11 @@ div.page {
     margin-bottom: 1.5em;
 }
 
-div.breadcrumb {
+ol.breadcrumb {
     background-color: transparent;
+    li {
+        font-size: $textFontSize;
+    }
 }
 
 div.map {

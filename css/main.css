@@ -90,6 +90,8 @@ body {
   font-family: 'Overlock', serif !important;
   background-color: #b32317 !important;
   background-image: url("../img/offsetArrows40o.png"); }
+  body p, body td {
+    font-size: 1.25em; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", sans-serif !important; }
@@ -287,8 +289,10 @@ div.page {
   text-align: left;
   margin-bottom: 1.5em; }
 
-div.breadcrumb {
+ol.breadcrumb {
   background-color: transparent; }
+  ol.breadcrumb li {
+    font-size: 1.25em; }
 
 div.map {
   margin-top: 1em; }

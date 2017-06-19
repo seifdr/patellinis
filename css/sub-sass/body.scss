@@ -4,6 +4,11 @@ body {
 	font-family: 'Overlock', serif !important;
 	background-color: $primaryRed !important;
     background-image: url('../img/offsetArrows40o.png');
+	
+	p, td {
+		font-size: $textFontSize;
+	}
+
     // background-image: url('../img/arrows128block40o.png');
 }
 
