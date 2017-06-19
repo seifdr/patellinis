@@ -31,3 +31,8 @@ div#locationAndHours {
         text-align: left; 
     }
 }
+
+// disable mouse pointer events. Can be turne back on via javascript
+.maps iframe{
+    pointer-events: none;
+}

@@ -56,8 +56,6 @@
 				});
 
 			</script>
-
-
 		</body>
 	</div> <!-- close container -->
 </html>

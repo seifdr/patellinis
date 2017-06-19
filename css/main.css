@@ -320,6 +320,9 @@ div#locationAndHours td:nth-child(even) {
   padding-left: 5px;
   text-align: left; }
 
+.maps iframe {
+  pointer-events: none; }
+
 a.catLinks:hover, a.catLinks:active, a.catLinks:focus, a.menuLinks:hover, a.menuLinks:active, a.catLinks:focus {
   text-decoration: none;
   cursor: default !important; }
