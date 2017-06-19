@@ -33,6 +33,11 @@ div.site-info {
 
 a#emailUs {
     color: #fff;
+
+    &:focus, &:active {
+        box-shadow: none !important;
+    }
+
 }
 
 a#emailUs:before {

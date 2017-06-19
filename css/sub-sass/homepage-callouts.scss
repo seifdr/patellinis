@@ -10,24 +10,24 @@ div#hpCallOut {
     width: 50%;
     text-align: center;
     /*border: 1px solid #fff;*/
-}
 
-div#hpCallOut > h1 {
-    font-size: 5em;
-    text-transform: uppercase;
-}
+    h1 {
+        font-size: 5em;
+        text-transform: uppercase;
+    }
 
-div#hpCallOut h3:nth-of-type(1) {
-    margin: 25px 0;
-}
+    h3:nth-of-type(1) {
+        margin: 25px 0;
+    }
 
-div#hpCallOut > p {
-    font-size: 1.5em;
-}
-
-div#hpCallOut > a.btn {
-    margin-top: 1em;
-    text-transform: uppercase;
+     p {
+        font-size: 1.5em;
+    }
+     
+     a.btn {
+        margin-top: 1em;
+        text-transform: uppercase;
+     }
 }
 
 @media (max-width: 992px) { 
@@ -36,18 +36,18 @@ div#hpCallOut > a.btn {
     }	
 }
 
-div.callouts {
+div.callouts { 
     margin-top: 2em;
-}
 
-div.callouts h3 {
-    text-align: center;
-}
+    h3 {
+        text-align: center;
+    }
 
-div.callouts div {
-    text-align: center;
-}
+    div {
+        text-align: center;
+    }
 
-div.callouts div.textWrap {
-    min-height: 80px;
+    div.textWrap {
+        min-height: 80px;
+    }
 }

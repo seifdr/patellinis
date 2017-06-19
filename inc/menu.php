@@ -35,7 +35,8 @@ class PatelinnisMenu
 		add_filter( 'wp_insert_post_data' , array( $this, 'filter_post_data') , '99', 2 );
 
 
-		add_action( 'admin_head', array( $this, 'css_admin_head_no_cache') );
+		add_action( 'admin_head', array( $this, 'css_admin_head_no_cache' ) );
+		add_action( 'admin_head', array( $this, 'remove_visibility_from_menu_posts' ) );
 
 		add_action( 'admin_menu', array( $this, 'add_to_posts_menu' ) );
 
@@ -44,6 +45,20 @@ class PatelinnisMenu
 		
 	}
 	
+	public function remove_visibility_from_menu_posts(){
+		//remove visibility from posts (menu items)
+		global $post;
+    	if( isset( $post ) && 'post' == $post->post_type ){
+			?>
+				<style type="text/css">
+					#visibility {
+						display: none;
+					}
+				</style>
+			<?php
+		} 
+	}
+
 	function enqueue_menu_scripts() {
 		// if( is_single() ) {
 		// 	wp_enqueue_style( 'love', plugins_url( '/love.css', __FILE__ ) );
@@ -107,7 +122,7 @@ class PatelinnisMenu
 		return get_terms( 'category', array( 'hide_empty' => false, 'exclude' => array('1'), 'orderby' => 'meta_value', 'meta_key' => 'categoryOrder', 'order' => 'ASC') );
 	}
 
-	function arrange_menu(){
+	public function arrange_menu(){
 		
 		$allCatsUnsortedOrOtherwise = $postCats = get_terms( 'category', array( 'hide_empty' => false, 'exclude' => array( '1' ) ) );
 
@@ -116,7 +131,7 @@ class PatelinnisMenu
 			$aCuOo_Ids[] = $aCuOo->term_id;
 		}
 
-		$postCats = get_cats();
+		$postCats = $this->get_cats();
 
 		$pc_Ids = array();
 		foreach ($postCats as $pc ) {

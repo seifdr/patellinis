@@ -114,7 +114,7 @@ font-family: 'Roboto Condensed', sans-serif;*/
 	@media (min-width: @screen-lg-min) { ... }
 */
 .breadcrumb {
-  background-color: none !important;
+  background-color: transparent !important;
   margin-bottom: 0 !important;
   padding: 0 !important; }
 
@@ -214,20 +214,16 @@ div#hpCallOut {
   width: 50%;
   text-align: center;
   /*border: 1px solid #fff;*/ }
-
-div#hpCallOut > h1 {
-  font-size: 5em;
-  text-transform: uppercase; }
-
-div#hpCallOut h3:nth-of-type(1) {
-  margin: 25px 0; }
-
-div#hpCallOut > p {
-  font-size: 1.5em; }
-
-div#hpCallOut > a.btn {
-  margin-top: 1em;
-  text-transform: uppercase; }
+  div#hpCallOut h1 {
+    font-size: 5em;
+    text-transform: uppercase; }
+  div#hpCallOut h3:nth-of-type(1) {
+    margin: 25px 0; }
+  div#hpCallOut p {
+    font-size: 1.5em; }
+  div#hpCallOut a.btn {
+    margin-top: 1em;
+    text-transform: uppercase; }
 
 @media (max-width: 992px) {
   div#hpCallOut {
@@ -235,15 +231,12 @@ div#hpCallOut > a.btn {
 
 div.callouts {
   margin-top: 2em; }
-
-div.callouts h3 {
-  text-align: center; }
-
-div.callouts div {
-  text-align: center; }
-
-div.callouts div.textWrap {
-  min-height: 80px; }
+  div.callouts h3 {
+    text-align: center; }
+  div.callouts div {
+    text-align: center; }
+  div.callouts div.textWrap {
+    min-height: 80px; }
 
 div#igTitle {
   margin-top: 2em; }
@@ -280,6 +273,8 @@ div.site-info {
 
 a#emailUs {
   color: #fff; }
+  a#emailUs:focus, a#emailUs:active {
+    box-shadow: none !important; }
 
 a#emailUs:before {
   font-family: FontAwesome;
@@ -291,6 +286,9 @@ a#emailUs:before {
 div.page {
   text-align: left;
   margin-bottom: 1.5em; }
+
+div.breadcrumb {
+  background-color: transparent; }
 
 div.map {
   margin-top: 1em; }
@@ -332,24 +330,26 @@ a.menuLinks {
 div.browseMenu {
   margin-bottom: 10px;
   padding-bottom: 10px; }
+  div.browseMenu ul {
+    list-style-type: none;
+    margin-bottom: 0 !important; }
+  div.browseMenu li {
+    margin: .25em; }
+    div.browseMenu li a {
+      padding: .5em;
+      display: block;
+      width: 100%;
+      background-color: #b32317;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 6px; }
+      div.browseMenu li a {
+        text-decoration: none;
+        background-color: #861a11; }
 
-.browseMenu ul {
-  list-style-type: none;
-  margin-bottom: 0 !important; }
-
-.browseMenu li {
-  margin: .25em; }
-
-.browseMenu li a {
-  padding: .5em;
-  display: block;
-  width: 100%;
-  background-color: #b32317;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 6px; }
-
-.browseMenu li a:hover {
-  text-decoration: none;
-  background-color: #861a11; }
+textarea#message-text {
+  height: 250px; }
+  textarea#message-text:focus, textarea#message-text:active {
+    border-color: #b32317;
+    box-shadow: none !important; }

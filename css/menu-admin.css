@@ -3,3 +3,19 @@
 	font-family: Fontawesome !important;
 }
 
+div#visibility {
+	visibility: none;
+}
+
+.mh-meta-comments { display: none; }
+
+/*#wp-admin-bar-customize {display: none;}*/
+
+.hide-if-no-customize {
+	display: none;
+}
+
+.wp-admin-bar-customize {
+	border: 1px solid red;
+}
+

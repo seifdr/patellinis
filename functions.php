@@ -90,12 +90,6 @@ function patelinis_base_setup() {
 
 	//Built in widgets 
 
-	//Link box widgets
-	//require_once('widgets/link-box-widget/kj-link-box.php');
-
-	//Kloiber Logo Widgets
-	//require_once('widgets/logo-widget/kj-logo-widget.php');
-
 	function footer_widgets_init() {
 		register_sidebar( 
 			array(
@@ -228,6 +222,12 @@ function patelinis_base_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'patelinis_base_scripts' );
 
+/*ADDS STYLESHEET ON WP-ADMIN*/
+add_action( 'admin_enqueue_scripts', 'patellinis_add_stylesheet_to_admin' );
+function patellinis_add_stylesheet_to_admin() {
+	wp_enqueue_style( 'patellinis-admin-overrides', get_template_directory_uri(). '/css/menu-admin.css' );
+}
+
 /**
  * Implement the Breadcrumbs feature.
  */
@@ -236,7 +236,7 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -251,9 +251,58 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
+
+//remove customizer 
+
+// add_action( 'wp_before_admin_bar_render', 'patellinis_before_admin_bar_render' ); 
+
+add_action('admin_menu', 'remove_comment_support');
+function remove_comment_support() {
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+
+add_action( 'admin_init', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'customize.php' );
+}
+
+//remove comments from upper admin bar
+add_action( 'admin_bar_menu', 'remove_items_upper_admin_bar', 999 );
+
+function remove_items_upper_admin_bar( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'wp-logo' );
+	$wp_admin_bar->remove_node( 'comments' );
+	$wp_admin_bar->remove_node( 'customize' );
+}
+
+/**
+ * Remove Admin Menu Link to Theme Customizer
+ */
+add_action( 'admin_menu', function () {
+    global $submenu;
+
+    if ( isset( $submenu[ 'themes.php' ] ) ) {
+        foreach ( $submenu[ 'themes.php' ] as $index => $menu_item ) {
+            if ( in_array( 'Customize', $menu_item ) ) {
+                unset( $submenu[ 'themes.php' ][ $index ] );
+            }
+        }
+    }
+});
 
 /**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/** 
+* Add an option for saving email in db
+*/
+
+if ( get_option('Contact Us Email Address') != '' ){
+	add_option( 'Contact Us Email Address', '' );
+}

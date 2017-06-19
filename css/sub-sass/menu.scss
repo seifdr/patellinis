@@ -42,14 +42,25 @@ a.menuLinks {
     padding-bottom: 2em;
 }
 
-div.browseMenu { margin-bottom: 10px; padding-bottom: 10px; }
+div.browseMenu { 
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
 
-.browseMenu ul { list-style-type: none; margin-bottom: 0 !important; }
+    ul {
+        list-style-type: none; 
+        margin-bottom: 0 !important;
+    } 
 
-.browseMenu li { margin: .25em; }
-.browseMenu li a { padding: .5em; display: block; width: 100%; background-color: $primaryRed; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; }
+    li {
+        margin: .25em;
 
-.browseMenu li a:hover {
-    text-decoration: none;
-    background-color: #861a11;
+        a {
+            padding: .5em; display: block; width: 100%; background-color: $primaryRed; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px;
+            &{
+                 text-decoration: none;
+                background-color: $secondaryRed;
+            }
+        }
+    }
+
 }

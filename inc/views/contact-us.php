@@ -8,10 +8,6 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
             <label for="message-text" class="control-label">Message:</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>

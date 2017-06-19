@@ -2,7 +2,7 @@
 
 body {
 	font-family: 'Overlock', serif !important;
-	background-color: #b32317 !important;
+	background-color: $primaryRed !important;
     background-image: url('../img/offsetArrows40o.png');
     // background-image: url('../img/arrows128block40o.png');
 }
@@ -17,7 +17,7 @@ div.container {
 }
 
 .red {
-	color: #b32317;
+	color: $primaryRed;
 }
 
 
@@ -36,17 +36,11 @@ font-family: 'Roboto Condensed', sans-serif;*/
 */
 
 
-.breadcrumb {
-	background-color: none !important;
-	margin-bottom: 0 !important;
-	padding: 0 !important;
-}
-
-
-
-	
-
-	
+	.breadcrumb {
+		background-color: transparent !important;
+		margin-bottom: 0 !important;
+		padding: 0 !important;
+	}
 
 	/*  INDEX PAGE CONTACT INFO */
 
@@ -63,7 +57,7 @@ font-family: 'Roboto Condensed', sans-serif;*/
 	}
 
 	body.blog h2, body.archive h2, body.single h1 {
-		color: #b32317;
+		color: $primaryRed;
 		text-transform: uppercase;
 		text-align: center;
 	}
