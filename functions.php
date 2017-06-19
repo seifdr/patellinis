@@ -305,7 +305,7 @@ require get_template_directory() . '/inc/jetpack.php';
 * Custom Title Tag
 */ 
 
-function theme_slug_render_title() 
+function patellinis_slug_render_title() 
 {
 	?>
 	<title>
@@ -313,4 +313,4 @@ function theme_slug_render_title()
 	</title>
 	<?php
 }
-add_action( 'wp_head', 'theme_slug_render_title' );
+add_action( 'wp_head', 'patellinis_slug_render_title' );
