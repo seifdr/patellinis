@@ -27,7 +27,12 @@ function custom_breadcrumbs() {
           
         if ( is_archive() && !is_tax() && !is_category() ) {
 
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
+            $custom_tax_name = get_queried_object()->name;
+
+            if( !empty( $custom_tax_name ) ){
+                echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . esc_html( ucwords( $custom_tax_name ) )  . '</strong></li>';
+            }
+            // echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
              
         } else if ( is_archive() && is_tax() && !is_category() ) {
 

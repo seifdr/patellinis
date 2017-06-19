@@ -14,7 +14,8 @@ var uglify 		= require('gulp-uglify');
 var pump 		= require('pump');
 
 // css compression
-var minifyCSS 	= require('gulp-minify-css');
+// var minifyCSS 	= require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 
 //for server and live reload, use gulp connect -- not being used anymore, doenst work with php
 // connect = require('gulp-connect');
@@ -117,6 +118,7 @@ gulp.task('build', function(){
 		'**/img/*.*',
 		'**/font-awesome-4.7.0/css/*.*',
 		'**/fonts/**/*.*',
+		'**/patellinis-bootstrap/**/*.*',
 		'**/languages/*.*'
 	];
 
@@ -131,7 +133,7 @@ gulp.task('build', function(){
 
 	pump([
 		gulp.src('css/**/*.css'),
-		minifyCSS(),
+		cleanCSS({compatibility: 'ie8'}),
 		gulp.dest( 'build/' + themeName + '/css' )
 	]);
 
