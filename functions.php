@@ -129,7 +129,7 @@ function patelinis_base_setup() {
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
 	 */
-	add_theme_support( 'title-tag' );
+	//add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -299,3 +299,18 @@ add_action( 'admin_menu', function () {
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/** 
+* Custom Title Tag
+*/ 
+
+function theme_slug_render_title() 
+{
+	?>
+	<title>
+		<?php wp_title( '| '. get_bloginfo('name') . ' - ' . get_bloginfo('description') . " - Sarasota, FL", true, 'right' ); ?>
+	</title>
+	<?php
+}
+add_action( 'wp_head', 'theme_slug_render_title' );
