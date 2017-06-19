@@ -297,12 +297,3 @@ add_action( 'admin_menu', function () {
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-/** 
-* Add an option for saving email in db
-*/
-
-if ( get_option('Contact Us Email Address') != '' ){
-	add_option( 'Contact Us Email Address', '' );
-}
