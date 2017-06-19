@@ -37,9 +37,9 @@ $the_bev_type			= get_field( 'beverage_type' );
 				the_row();
 
 				echo "<div class='row' >";
-					echo "<div class='col-xs-9 col-sm-6' >";
+					echo "<div class='col-xs-9 col-sm-6' ><p>";
 			       		the_sub_field('variation_description');
-			        echo "</div>";
+			        echo "</p></div>";
 			        echo "<div class='hidden-xs col-sm-4' ></div>";
 			        echo "<div class='col-xs-3 col-sm-2 text-center simulatedH4 noMargin'>";
 			        	$variation_price = trim( get_sub_field('variation_price') );

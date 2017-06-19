@@ -232,7 +232,6 @@ div#hpCallOut {
     width: 100%; } }
 
 div.callouts {
-  border: 1px solid red;
   margin-top: 2em; }
   div.callouts h3 {
     text-align: center; }
