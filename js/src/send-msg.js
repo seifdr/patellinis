@@ -3,6 +3,7 @@ jQuery(document).ready( function($) {
 
 	$("#emailUs").click(function () {
 		$('div#contactUsModal div.modal-body').html('<form><div class="form-group"><label for="message-text" class="control-label">Message:</label><textarea class="form-control" id="message-text"></textarea></div></form>');
+		$('button#sendMsg').show();
 		$('#contactUsModal').modal('show');
 		return false;
 	});
@@ -19,8 +20,6 @@ jQuery(document).ready( function($) {
 
 				$('button#sendMsg').prop("disabled",true).text('Sending...');
 
-				alert( postmsg.ajax_url );
-
 				$.ajax({
 					url: postmsg.ajax_url,
 					type: 'post',
@@ -31,7 +30,8 @@ jQuery(document).ready( function($) {
 					success: function( data, textStatus, jqXHR ) {
 						// alert(jqXHR.responseText);
 						if( jqXHR.responseText == 1 ){
-							$('button#sendMsg').prop("disabled",false).text("Send message");
+							$('button#sendMsg').prop("disabled",false).text("Send message").hide();
+							
 							msgText.val('');
 							$('div#contactUsModal h4.modal-title').html("Success");
 							$('div#contactUsModal div.modal-body').html("<div class='alert alert-success'><strong>Your message was successfully sent. We will be intouch shortly.</strong></div>");
