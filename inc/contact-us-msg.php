@@ -19,23 +19,27 @@ class PatellinisContactUs
     }
 
     public function sendMsg() {
-        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { 
+        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+        	
+			if( isset( $_POST['message'] ) && !empty( $_POST['message'] ) ){
+				$from = "Patellinis Website";
 
-            $from = "Patellinis Website";
-
-            $xheaders = "";
-            $xheaders .= "From: <$from>\n";
-            $xheaders .= "X-Sender: <$from>\n";
-            $xheaders .= "X-Mailer: PHP\n"; // mailer
-            $xheaders .= "X-Priority: 1\n"; //1 Urgent Message, 3 Normal
-            $xheaders .= "Content-Type:text/html; charset=\"iso-8859-1\"\n";
-            $xheaders .= "Bcc:drs724@gmail.com\n";
-            // $xheaders .= "Cc:email2@example.com\n";
-
-            mail( 'duncan.seif@hotmail.com', "Message from the website", $message, $xheaders );
-
-            echo TRUE; 
-            exit();
+	            $xheaders = "";
+	            $xheaders .= "From: <$from>\n";
+	            $xheaders .= "X-Sender: <$from>\n";
+	            $xheaders .= "X-Mailer: PHP\n"; // mailer
+	            $xheaders .= "X-Priority: 3\n"; //1 Urgent Message, 3 Normal
+	            $xheaders .= "Content-Type:text/html; charset=\"iso-8859-1\"\n";
+	            $xheaders .= "Bcc:drs724@gmail.com\n";
+	            // $xheaders .= "Cc:email2@example.com\n";
+	
+	            mail( 'duncan.seif@hotmail.com', "Message from the website", $_POST['message'], $xheaders );
+	
+	            echo TRUE; 
+	            exit();
+			} // isset and !empty $_POST['message']
+				echo FALSE;
+				exit();
         } else {
             die();
         }

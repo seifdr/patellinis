@@ -83,8 +83,8 @@ gulp.task('browser-sync', function() {
     //initialize browsersync
     browserSync.init(files, {
 	    //browsersync with a php server
-	    // proxy: "http://localhost:8888/patellinis/",
-		proxy: "localhost/patellinis",
+	    proxy: "http://localhost:8888/patellinis/",
+		// proxy: "localhost/patellinis",
 	    notify: false
     });
 });

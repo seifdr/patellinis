@@ -38,6 +38,7 @@ jQuery(document).ready( function($) {
 							//$('div#contactUsModal').modal('hide');
 						} else {
 							alert('There was an error sending your message. Please try again.');
+							$('button#sendMsg').prop("disabled",false);
 						}
 					}
 				});
