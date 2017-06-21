@@ -53,7 +53,6 @@ function custom_breadcrumbs() {
             echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></li>';
              
         } else if ( is_single() ) {
-			 
 
 
             // If post is a custom post type
