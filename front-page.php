@@ -199,8 +199,8 @@ get_header(); ?>
 							echo '<a href="'. $obj['data'][$i]['link'] .'" class="thumbnail col-xs-12">';
 						    	echo '<img src="'. $obj['data'][$i]['images']['low_resolution']['url'] .'" alt="...">';
 						    echo '</a>';
-						    echo '<div class="row"><div class="col-xs-6 "<p class="text-left"><i class="fa fa-heart red" aria-hidden="true"></i>&nbsp;'. $obj['data'][$i]['likes']['count'] .'&nbsp;Likes</p></div>';
-						   	echo '<div class="col-xs-6"><p class="text-right">'. $obj['data'][$i]['comments']['count'] .'&nbsp;Comments</p></div></div>';
+						    echo '<div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6"><p class="text-left"><i class="fa fa-heart red" aria-hidden="true"></i>&nbsp;'. $obj['data'][$i]['likes']['count'] .'&nbsp;Likes</p></div>';
+						   	echo '<div class="hidden-xs hidden-sm hidden-md col-lg-6"><p class="text-right">'. $obj['data'][$i]['comments']['count'] .'&nbsp;Comments</p></div></div>';
 							echo '<div class="row"><p class="col-xs-12 text-center">'. $obj['data'][$i]['caption']['text'] .'</p></div>';
 						echo '</div>';	
 						
