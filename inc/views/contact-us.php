@@ -2,7 +2,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!--data-dismiss="modal"-->
+        <button type="button" class="close dismissMe" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="exampleModalLabel">New message</h4>
       </div>
       <div class="modal-body">
@@ -14,7 +15,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--data-dismiss="modal"-->
+        <button type="button" class="btn btn-default dismissMe">Close</button>
         <button type="button" class="btn btn-primary" id="sendMsg">Send message</button>
       </div>
     </div>

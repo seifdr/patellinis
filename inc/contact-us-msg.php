@@ -4,16 +4,16 @@ class PatellinisContactUs
 {
 
     function __construct(){
-        add_action('init', array( $this, 'pcs_enqueue_scripts') );
+        add_action('wp_enqueue_scripts', array( $this, 'pcs_enqueue_scripts'), 12 );
         
         add_action( 'wp_ajax_nopriv_sendMsg', array( $this, 'sendMsg' ) );
         add_action( 'wp_ajax_sendMsg', array( $this, 'sendMsg' ) );
     }
 
     public function pcs_enqueue_scripts() {
-        wp_enqueue_script( 'send-msg', get_stylesheet_directory_uri() . "/js/send-msg.js", array('jquery'), '1.0', true );
+        //wp_enqueue_script( 'send-msg', get_stylesheet_directory_uri() . "/js/send-msg.js", array('jquery'), '1.0', true );
 
-        wp_localize_script( 'send-msg', 'postmsg', array(
+        wp_localize_script( 'patelinnis_main_js', 'postmsg', array(
         	'ajax_url' => admin_url( 'admin-ajax.php' )
         ));
     }
