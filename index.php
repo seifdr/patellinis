@@ -29,7 +29,7 @@ get_header(); ?>
 							<div class="col-xs-12">
 								<?php custom_breadcrumbs(); ?>
 								<br />
-								<p>For a pdf copy of our menu, please <a href="#">click here</a>.</p>
+								<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="<?php echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu </strong></a>.</p>
 								<br />
 								<p><strong>Browse our menu by category</strong></p>
 							</div>
@@ -59,6 +59,12 @@ get_header(); ?>
 										}
 									?>
 									</ul>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<p>For a pdf copy of our menu, please <a target="_blank" href="http://www.duncanseif.com/patellinis/wp-content/uploads/2017/06/patellinis-menu.pdf">click here</a>.</p>
+								<br />
+							</div>
 						</div>
 					</header>
 
@@ -109,7 +115,6 @@ get_header(); ?>
 					$bev_counter  = 0;
 
 					while ( have_posts() ) {
-
 						the_post();
 						$post_counter++;
 

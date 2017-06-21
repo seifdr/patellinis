@@ -19,7 +19,9 @@ get_header(); ?>
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 					<?php
 					if ( have_posts() ) { ?>
-							<p> To see our complete menu, please visit our <strong><a a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" >Menu page</a></strong>.<br />
+							<br />
+							<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="<?php echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu</strong></a>.</p>
+							<br />
 							<h2><?php echo single_term_title(); ?></h2>
 							<?php
 								the_archive_description( '<p>', '</p>' );

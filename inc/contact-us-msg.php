@@ -30,10 +30,10 @@ class PatellinisContactUs
 	            $xheaders .= "X-Mailer: PHP\n"; // mailer
 	            $xheaders .= "X-Priority: 3\n"; //1 Urgent Message, 3 Normal
 	            $xheaders .= "Content-Type:text/html; charset=\"iso-8859-1\"\n";
-	            $xheaders .= "Bcc:drs724@gmail.com\n";
+	            $xheaders .= "Bcc:duncan.seif@hotmail.com\n";
 	            // $xheaders .= "Cc:email2@example.com\n";
 	
-	            mail( 'duncan.seif@hotmail.com', "Message from the website", $_POST['message'], $xheaders );
+	            mail( 'agentanish@gmail.com', "Message from the website", $_POST['message'], $xheaders );
 	
 	            echo TRUE; 
 	            exit();
