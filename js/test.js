@@ -7,8 +7,6 @@ jQuery(document).ready(function($) {
 
 				hideAndShow( value ){
 
-					alert("hello");
-
 					// .reg
 					// .soda 
 					// .salad

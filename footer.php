@@ -45,17 +45,6 @@
 
 			<?php include('inc/views/contact-us.php'); ?>
 
-			<script type="text/javascript">
-
-				jQuery(document).ready(function($) {
-
-					$('.contactUsLink').on('click', function(){
-						alert('Message Sent');
-						$('div#exampleModal').modal('hide');
-					});
-				});
-
-			</script>
 		</body>
 	</div> <!-- close container -->
 </html>

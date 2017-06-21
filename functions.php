@@ -112,6 +112,11 @@ function patelinis_base_setup() {
 	-------------------------------------------------------------------------------*/
 	require_once('inc/menu.php');
 
+	/*-------------------------------------------------------------------------------
+			Enable email us button
+	-------------------------------------------------------------------------------*/
+	require_once('inc/contact-us-msg.php');
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
